@@ -105,7 +105,7 @@ export default function Projects() {
               Proyectos <span className="text-[#D2CDBA]">Destacados</span>.
             </h2>
           </div>
-          <a href="#contacto" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.1em] text-white hover:text-[#75FF76] transition-colors border-b border-[#75FF76]/30 hover:border-[#75FF76] pb-1">
+          <a href="#contacto" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.1em] text-white hover:text-[#75FF76] transition-colors border-b border-[#75FF76]/30 hover:border-[#75FF76] pb-1 w-fit">
             Contactanos por tu proyecto <span>→</span>
           </a>
         </motion.div>

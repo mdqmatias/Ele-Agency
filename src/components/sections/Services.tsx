@@ -152,7 +152,7 @@ export default function Services() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#75FF76] text-black font-bold uppercase text-sm tracking-[0.15em] hover:shadow-[0_0_30px_rgba(117,255,118,0.4)] transition-all duration-300 hover:scale-105"
             >
-              Agendá tu asesoría gratuita
+              Agendar Asesoría
               <span className="text-xl">→</span>
             </a>
           </div>

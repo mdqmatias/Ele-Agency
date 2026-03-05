@@ -46,9 +46,9 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-16 md:gap-12">
           {/* Logo & tagline */}
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-7">
             <Link href="/" className="inline-block">
               <Image src="/images/logos/ele-agency-full.png" alt="ELE AGENCY" width={400} height={100} className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto brightness-0 invert" />
             </Link>
@@ -66,28 +66,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#888888] mb-8">Navegación</h4>
-            <ul className="flex flex-col gap-4">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-[#B0B0B0] hover:text-[#75FF76] transition-colors duration-300">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid grid-cols-2 md:contents gap-10">
+            {/* Navigation */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#888888] mb-8">Navegación</h4>
+              <ul className="flex flex-col gap-4">
+                {footerLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-[#B0B0B0] hover:text-[#75FF76] transition-colors duration-300">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#888888] mb-8">Contacto</h4>
-            <ul className="flex flex-col gap-4 text-sm text-[#B0B0B0]">
-              <li><a href="mailto:hola@eleagency.com" className="hover:text-[#75FF76] transition-colors">hola@eleagency.com</a></li>
-              <li><a href="https://wa.me/5491100000000" className="hover:text-[#75FF76] transition-colors">WhatsApp</a></li>
-              <li>Buenos Aires, Argentina</li>
-            </ul>
+            {/* Contact */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#888888] mb-8">Contacto</h4>
+              <ul className="flex flex-col gap-4 text-sm text-[#B0B0B0]">
+                <li><a href="mailto:hola@eleagency.com" className="hover:text-[#75FF76] transition-colors">hola@eleagency.com</a></li>
+                <li><a href="https://wa.me/5491100000000" className="hover:text-[#75FF76] transition-colors">WhatsApp</a></li>
+                <li className="text-xs sm:text-sm">Buenos Aires, Argentina</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
