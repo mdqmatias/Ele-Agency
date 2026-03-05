@@ -158,50 +158,82 @@ export default function Projects() {
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-12 bg-black/80 backdrop-blur-md"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ 
+                type: "spring", 
+                damping: 30, 
+                stiffness: 300,
+                mass: 0.8
+              }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl bg-[#111] overflow-hidden flex flex-col md:flex-row max-h-[90vh] shadow-2xl border border-[#2A2A2A]"
+              className="relative w-full max-w-5xl bg-[#111] overflow-hidden flex flex-col md:flex-row max-h-[90vh] shadow-[0_0_100px_rgba(0,0,0,0.8)] border border-white/10"
             >
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-[#75FF76] text-white hover:text-black rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
+                className="absolute top-6 right-6 z-20 w-12 h-12 bg-black/50 hover:bg-[#75FF76] text-white hover:text-black rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md border border-white/10 hover:scale-110 active:scale-95"
               >
-                <X size={20} />
+                <X size={24} />
               </button>
 
-              <div className="relative w-full md:w-1/2 h-64 md:h-auto min-h-[50vh]">
-                <Image 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title} 
-                  fill 
-                  className="object-cover"
-                />
+              <div className="relative w-full md:w-1/2 h-64 md:h-auto min-h-[40vh] overflow-hidden">
+                <motion.div
+                  initial={{ scale: 1.1, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="h-full w-full"
+                >
+                  <Image 
+                    src={selectedProject.image} 
+                    alt={selectedProject.title} 
+                    fill 
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#111] hidden md:block" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent block md:hidden" />
               </div>
 
-              <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center overflow-y-auto">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#75FF76] mb-4 block">
-                  {selectedProject.category}
-                </span>
-                <h3 className="text-3xl sm:text-4xl font-black text-white uppercase leading-[1.1] mb-6">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-[#B0B0B0] text-sm md:text-base leading-relaxed mb-8">
-                  {selectedProject.description}
-                </p>
-                
-                <h4 className="text-white font-bold uppercase text-sm mb-4">Resultados Clave</h4>
-                <ul className="space-y-3">
-                  {selectedProject.results.map((result, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm text-[#888888]">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#75FF76]" />
-                      {result}
-                    </li>
-                  ))}
-                </ul>
+              <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center overflow-y-auto bg-[#111]">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                >
+                  <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#75FF76] mb-5 block">
+                    {selectedProject.category}
+                  </span>
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase leading-[1] mb-8">
+                    {selectedProject.title}
+                  </h3>
+                  <div className="w-12 h-1 bg-[#75FF76] mb-8" />
+                  <p className="text-[#B0B0B0] text-base md:text-lg leading-relaxed mb-10 font-medium">
+                    {selectedProject.description}
+                  </p>
+                  
+                  <div className="space-y-6">
+                    <h4 className="text-white font-bold uppercase text-xs tracking-widest flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#75FF76] animate-pulse" />
+                      Resultados Clave
+                    </h4>
+                    <ul className="space-y-4">
+                      {selectedProject.results.map((result, i) => (
+                        <motion.li 
+                          key={i} 
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4 + i * 0.1 }}
+                          className="flex items-start gap-4 text-sm md:text-base text-[#888] group/item"
+                        >
+                          <span className="text-[#75FF76] mt-0.5 font-bold">»</span>
+                          <span className="group-hover/item:text-white transition-colors">{result}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>

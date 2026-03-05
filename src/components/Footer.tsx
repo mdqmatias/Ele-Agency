@@ -5,16 +5,17 @@ import Link from "next/link";
 import { Instagram, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = [
+  { href: "#inicio", label: "Inicio" },
   { href: "#servicios", label: "Servicios" },
-  { href: "#proyectos", label: "Proyectos" },
   { href: "#nosotros", label: "Nosotros" },
+  { href: "#proyectos", label: "Trabajos" },
   { href: "#contacto", label: "Contacto" },
 ];
 
 const socialLinks = [
   { href: "https://www.instagram.com/eleagency.mkt/", icon: Instagram, label: "Instagram" },
   { href: "https://www.linkedin.com/company/eleagency/", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:hola@eleagency.com", icon: Mail, label: "Email" },
+  { href: "mailto:hola@ele-agency.com", icon: Mail, label: "Email" },
 ];
 
 export default function Footer() {
@@ -85,7 +86,7 @@ export default function Footer() {
             <div>
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#888888] mb-8">Contacto</h4>
               <ul className="flex flex-col gap-4 text-sm text-[#B0B0B0]">
-                <li><a href="mailto:hola@eleagency.com" className="hover:text-[#75FF76] transition-colors">hola@eleagency.com</a></li>
+                <li><a href="mailto:hola@ele-agency.com" className="hover:text-[#75FF76] transition-colors">hola@ele-agency.com</a></li>
                 <li><a href="https://wa.me/5491100000000" className="hover:text-[#75FF76] transition-colors">WhatsApp</a></li>
                 <li className="text-xs sm:text-sm">Buenos Aires, Argentina</li>
               </ul>

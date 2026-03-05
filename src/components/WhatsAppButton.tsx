@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 export default function WhatsAppButton() {
@@ -18,9 +18,15 @@ export default function WhatsAppButton() {
           transition={{ delay: 1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl shadow-[#25D366]/40 hover:shadow-[#25D366]/60 transition-shadow duration-300 relative group"
+          className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl shadow-[#25D366]/40 hover:shadow-[#25D366]/60 transition-shadow duration-300 relative group cursor-pointer"
         >
-          <MessageCircle size={32} className="text-white fill-white relative z-10" />
+          <Image 
+            src="/images/logos/whatsapp-logo.svg" 
+            alt="WhatsApp" 
+            width={32} 
+            height={32} 
+            className="relative z-10 brightness-0 invert" 
+          />
           
           {/* Ping animation expanded */}
           <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 group-hover:opacity-40" />

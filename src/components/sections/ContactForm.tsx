@@ -2,7 +2,8 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { Mail, ArrowUpRight, Instagram, Linkedin, Send } from "lucide-react";
 
 const services = [
   "Branding & Rebranding", "Diseño Web", "Meta Ads", "Google Ads",
@@ -52,39 +53,53 @@ export default function ContactForm() {
                 href="https://wa.me/5491100000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-5 p-5 border border-[#2A2A2A] hover:border-[#25D366]/40 transition-all duration-300 bg-[#151515]"
+                className="group flex items-center gap-5 p-5 border border-[#2A2A2A] hover:border-[#75FF76]/40 transition-all duration-300 bg-[#151515]"
               >
-                <div className="w-12 h-12 bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center text-[#25D366] shrink-0">
-                  <Send size={18} />
+                <div className="w-12 h-12 bg-[#75FF76]/10 border border-[#75FF76]/20 flex items-center justify-center text-[#75FF76] shrink-0 transition-colors group-hover:bg-[#75FF76]/20">
+                   <div 
+                     className="w-6 h-6 bg-[#75FF76]" 
+                     style={{ 
+                       maskImage: 'url(/images/logos/whatsapp-logo.svg)', 
+                       maskRepeat: 'no-repeat', 
+                       maskPosition: 'center', 
+                       maskSize: 'contain',
+                       WebkitMaskImage: 'url(/images/logos/whatsapp-logo.svg)', 
+                       WebkitMaskRepeat: 'no-repeat', 
+                       WebkitMaskPosition: 'center', 
+                       WebkitMaskSize: 'contain'
+                     }} 
+                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-bold text-white">WhatsApp</p>
-                  <p className="text-xs text-[#888888] mt-1">Respuesta inmediata</p>
+                   <p className="text-sm font-bold text-white uppercase tracking-wider">WhatsApp</p>
+                   <p className="text-xs text-[#888888] mt-1">Respuesta inmediata</p>
                 </div>
-                <ArrowUpRight size={16} className="text-[#888888] group-hover:text-[#25D366] transition-colors shrink-0" />
+                <ArrowUpRight size={16} className="text-[#888888] group-hover:text-[#75FF76] transition-colors shrink-0" />
               </a>
 
               <a
-                href="mailto:hola@eleagency.com"
+                href="mailto:hola@ele-agency.com"
                 className="group flex items-center gap-5 p-5 border border-[#2A2A2A] hover:border-[#75FF76]/40 transition-all duration-300 bg-[#151515]"
               >
                 <div className="w-12 h-12 bg-[#75FF76]/10 border border-[#75FF76]/20 flex items-center justify-center text-[#75FF76] shrink-0">
-                  <Send size={18} />
+                  <Mail size={22} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-bold text-white">hola@eleagency.com</p>
+                  <p className="text-sm font-bold text-white uppercase tracking-wider">hola@ele-agency.com</p>
                   <p className="text-xs text-[#888888] mt-1">Te respondemos en 24hs</p>
                 </div>
                 <ArrowUpRight size={16} className="text-[#888888] group-hover:text-[#75FF76] transition-colors shrink-0" />
               </a>
             </div>
 
-            <div className="mt-14 flex gap-8">
-              <a href="https://www.instagram.com/eleagency.mkt/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-[0.15em] text-[#888888] hover:text-[#75FF76] transition-colors">
-                Instagram ↗
+            <div className="mt-14 flex flex-wrap gap-10">
+              <a href="https://www.instagram.com/eleagency.mkt/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#888888] hover:text-[#75FF76] transition-all">
+                <Instagram size={18} className="text-[#888888] group-hover:text-[#75FF76] transition-colors" />
+                Instagram
               </a>
-              <a href="https://www.linkedin.com/company/eleagency/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-[0.15em] text-[#888888] hover:text-[#75FF76] transition-colors">
-                LinkedIn ↗
+              <a href="https://www.linkedin.com/company/eleagency/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#888888] hover:text-[#75FF76] transition-all">
+                <Linkedin size={18} className="text-[#888888] group-hover:text-[#75FF76] transition-colors" />
+                LinkedIn
               </a>
             </div>
           </motion.div>

@@ -91,6 +91,9 @@
 html {
   background-color: #0A0A0A;
   color-scheme: dark;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for sticky header */
 }
 
 body {

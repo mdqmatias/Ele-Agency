@@ -29,11 +29,11 @@ export default function Team() {
       const maxScroll = scrollWidth - clientWidth;
 
       if (direction === 'right' && scrollLeft >= maxScroll - 10) {
-        scrollRef.current.scrollTo({ left: 0, behavior: "auto" });
+        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
       } else if (direction === 'left' && scrollLeft <= 10) {
-        scrollRef.current.scrollTo({ left: maxScroll, behavior: "auto" });
+        scrollRef.current.scrollTo({ left: maxScroll, behavior: "smooth" });
       } else {
-        scrollRef.current.scrollBy({ left: scrollAmount, behavior: "auto" });
+        scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
       }
     }
   };
@@ -68,14 +68,14 @@ export default function Team() {
           >
             <button 
               onClick={() => scrollBy('left')}
-              className="w-12 h-12 rounded-full border border-[#2A2A2A] flex items-center justify-center transition-all duration-300 text-white hover:border-[#75FF76] hover:text-[#75FF76] bg-[#151515]"
+              className="w-12 h-12 rounded-full border border-[#2A2A2A] flex items-center justify-center transition-all duration-300 text-white hover:border-[#75FF76] hover:text-[#75FF76] bg-[#151515] cursor-pointer"
               aria-label="Anterior"
             >
               <ChevronLeft size={20} />
             </button>
             <button 
               onClick={() => scrollBy('right')}
-              className="w-12 h-12 rounded-full border border-[#2A2A2A] flex items-center justify-center transition-all duration-300 text-white hover:border-[#75FF76] hover:text-[#75FF76] bg-[#151515]"
+              className="w-12 h-12 rounded-full border border-[#2A2A2A] flex items-center justify-center transition-all duration-300 text-white hover:border-[#75FF76] hover:text-[#75FF76] bg-[#151515] cursor-pointer"
               aria-label="Siguiente"
             >
               <ChevronRight size={20} />
@@ -86,7 +86,7 @@ export default function Team() {
         {/* Carousel Container */}
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-5 md:gap-8 pb-12 pt-4 -mx-6 px-6 lg:mx-0 lg:px-0"
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-5 md:gap-8 pb-12 pt-4 -mx-6 px-6 lg:mx-0 lg:px-0 hide-scrollbar"
         >
           {team.map((member, index) => (
             <motion.div

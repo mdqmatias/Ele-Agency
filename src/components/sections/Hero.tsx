@@ -34,7 +34,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[90svh] lg:min-h-[95vh] flex items-center justify-center overflow-hidden bg-[#0A0A0A]">
+    <section id="inicio" className="relative min-h-[90svh] lg:min-h-[95vh] flex items-center justify-center overflow-hidden bg-[#0A0A0A]">
       {/* Ambient Animated Background instead of images */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {/* Base dark bg */}

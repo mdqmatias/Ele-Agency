@@ -81,7 +81,7 @@ export default function About() {
           style={{ willChange: "transform, opacity" }}
         >
           <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#75FF76] mb-5 block">
-            Conocenos
+            Nosotros
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[1] max-w-2xl text-white">
             Una agencia con una mirada{" "}
